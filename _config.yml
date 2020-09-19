@@ -1,52 +1,49 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+baseurl: ''
+exclude: ['README.md']
+permalink: pretty
+title: 'Segnet'
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: SEGNET
-email: your-email@example.com
-description: > # this means to ignore newlines until "baseurl:"
-  Segnet connecting and nuturing communities
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics_id: 'UA-178417050-1'
+homepage:
+  show_call_box: true
+logo:
+  mobile: "images/logo/logo-mobile.svg"
+  desktop: "images/logo/240.png"
+  desktop_height: "36px"
+footer:
+  copyright_text: 'SEGNET &#169;'
 
-# Company Information
-company_name: Segnent EA LTD
-address_line: Nairobi
-telephone_number: 0722
-fax_number: 0722
-company_email: hello@segnet.co.ke
-google_map: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31910.299837461822!2d36.821810817157456!3d-1.3024653892011413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1111d99fc6c1%3A0xcd271b9bcfd41d76!2sLand%20Mawe%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1600327968222!5m2!1sen!2ske
+seo:
+  meta_og_title: "Segent"
+  meta_og_type: "website"
+  meta_og_url: "https://segnet.co.ke"
+  meta_og_image: ""
+  meta_og_description: "We provide provide services that nurture local groups."
+  meta_twitter_card: "summary"
+  meta_twitter_site: null
+  meta_twitter_creator: null
 
-# Social Link
-facebook_link: http://www.facebook.com
-twitter_link: http://www.twitter.com
-linkedin_link: http://www.linkedin.com
-googleplus_link: http://plus.google.com
+collections:
+  services:
+    output: true
+    permalink: /services/:path/
+  team:
+    output: true
+    permalink: /team/:path/
 
-# Build settings
-markdown: kramdown
+defaults:
+  - scope:
+      type: services
+    values:
+      layout: service
+      bodyClass: page-services-single
+  - scope:
+      path: 'images'
+    values:
+      image: true
+
+sass:
+  style: compact # possible values: nested expanded compact compressed
+
 plugins:
-  - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - jekyll-environment-variables
