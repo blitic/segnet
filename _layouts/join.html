@@ -2,18 +2,120 @@
 layout: default
 ---
 
-<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+<div class="container">
   <div class="row justify-content-start">
     <div class="col-12 col-md-8">
-      <div class="service service-single">
+      <div>
         <h1 class="title">{{page.title}}</h1>
         <div class="content">{{content}}</div>
-        <script src="https://kwes.io/v2/kwes-script.js" charset="utf-8"></script>
-        <form class="kwes-form" action="https://kwes.io/api/foreign/forms/Madyx6GWgLSMMyx507dq">
-          <label for="name">Group's Name</label>
-          <input type="text" name="name" rules="required|max:255">
+        <form class="kwes-form" action="https://kwes.io/api/foreign/forms/Madyx6GWgLSMMyx507dq" method="POST">
 
-          <button type="submit">Submit</button>
+          <div class="form-group">
+            <label>1. Name of Group:</label>
+            <input type="text" class="form-control" name="name_of_group" placeholder="Name of Group" rules="required|max:255">
+          </div>
+
+          <div class="form-group">
+            <label>2. Registration Number:</label>
+            <input type="text" class="form-control" name="registration_number" placeholder="Registration Number" rules="required|max:255">
+          </div>
+
+          <div class="form-group">
+            <label>3. Physical Location:</label>
+            <input type="text"  name="physical_location" placeholder="Physical Location" rules="required|max:255">
+
+
+
+            <label>Area Administrator:</label>
+            <input type="text"  name="area_administrator" placeholder="Area Administrator">
+          </div>
+
+          <div class="form-group">
+            <label>4. Name of Founders:</label>
+            <input type="text" class="form-control" name="founder_1" placeholder="1st Founder Name" rules="required|max:255">
+            <br>
+            <input type="text" class="form-control" name="founder_2" placeholder="2nd Founder Name">
+            <br>
+            <input type="text" class="form-control" name="founder_3" placeholder="3rd Founder Name">
+          </div>
+
+          <div class="form-group">
+            <label>5. Principal Person (Official) Name:</label>
+            <input type="text" class="form-control" name="principal" placeholder="Principal">
+          </div>
+
+          <label>6. Principal Contacts:</label>
+          <br>
+          <input type="text" name="principal_phone_number" placeholder="Phone Number" rules="required">
+          <input type="text" name="principal_address" placeholder="Address" rules="required">
+          <input type="text" name="principal_email" placeholder="Email" rules="email|required">
+          <br>
+          <br>
+
+          <div class="form-group">
+            <label>7. Briefly explain concept of forming the group:</label>
+            <textarea type="text" class="form-control" name="group_concept"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>8. Group Mission/Vision:</label>
+            <textarea type="text" class="form-control" name="mission" placeholder="Mission"></textarea>
+            <br>
+            <textarea type="text" class="form-control" name="vision" placeholder="Vision"></textarea>
+          </div>
+
+          <label>9. Group Objectives:</label>
+          <br>
+          <textarea type="text" class="form-control" name="objective_1" placeholder="1st Objective" rules="required"></textarea>
+          <br><br>
+          <textarea type="text" class="form-control" name="objective_2" placeholder="2nd Objective"></textarea>
+          <br><br>
+          <textarea type="text" class="form-control" name="objective_3" placeholder="3rd Objective"></textarea>
+          <br>
+          <br>
+          <br>
+          <div class="form-group">
+            <label>10. List the group achievements/milestones since formation:</label>
+            <textarea type="text" class="form-control" name="achievements"></textarea>
+          </div>
+          <div class="form-group">
+            <label>11. Current Projects/Activities:</label>
+            <textarea type="text" class="form-control" name="current_activities"></textarea>
+          </div>
+          <div class="form-group">
+            <label>12. List group future plans:</label>
+            <textarea type="text" class="form-control" name="future_plans"></textarea>
+          </div>
+          <div class="form-group">
+            <label>13. Briefly list down challenges the group has experienced since formation:</label>
+            <textarea type="text" class="form-control" name="challenges"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>14. Does the group have an online presence i.e. does the group use social media tools e.g. Facebook, Twitter, etc. for information exchange?:</label>
+            <select class="custom-select" name='has_online_presence'>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required name='agree_terms_conditions'>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+
+
+
+
+
+           <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
